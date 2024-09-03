@@ -55,7 +55,8 @@ console.log(suma(10,10))
 console.log(resultado) */
 
 //Invocamos la Función de orden superior pasandole el argumento suma
-console.log(calculadora(5,2,suma))
+let resultado = calculadora(5,2,suma)
+console.log(resultado)
 
 //Invocamos la Función de orden superior pasandole el argumento resta
 console.log(calculadora(5,2,resta))
@@ -87,3 +88,17 @@ console.log(calculadoraMala((num1, num2) => {
 }, 50, 25, (num1, num2) => { 
     return num1 * num2
 }))
+
+//Ejemplo de solicitud al servidor con callback
+function solicitudServidor(consulta, callback){
+
+    var respuesta = consulta + "lleno!";
+    callback(respuesta);
+
+}
+
+function obtenerResultados(resultados){
+  console.log("Respuesta del servidor: " + resultados);
+}
+
+solicitudServidor("El vaso está medio  ", obtenerResultados);
